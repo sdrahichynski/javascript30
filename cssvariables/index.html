@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS variables</title>
+
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+	<main class="container">
+
+		<h1>
+			Hello this is <span class="color">JS</span>
+		</h1>
+
+		<div>
+			<label for="">Blur:</label>
+			<input type="range" name="blur" min="0" max="10" value="5" data-sizing="px">
+
+			<br>
+
+			<label for="">Spacing:</label>
+			<input type="range" name="space" min="0" max="50" value="10" data-sizing="px">
+
+			<br>
+
+			<label for="">Color:</label>
+			<input type="color" name="color" value="#bada55" >
+
+			<div class="img">
+				<img src="img/moto.jpg" alt="">
+			</div>
+		</div>
+
+	</main>
+
+
+	<script src="js/main.js"></script>
+</body>
+</html>
