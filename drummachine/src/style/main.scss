@@ -39,6 +39,10 @@ body {
 
 			margin-right: 7px;
 
+		* {
+			pointer-events: none;
+		}
+
 		span {
 			display: block;
 

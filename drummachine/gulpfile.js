@@ -135,13 +135,20 @@ gulp.task('svgstore', function () {
         .pipe(gulp.dest('src/img'));
 });
 
+gulp.task('audio:build', function(){
+    return gulp
+           .src('src/audio/*.*')
+           .pipe(gulp.dest('build/audio/'));
+});
+
 gulp.task('build', [
     'html:build',
     'js:build',
     'style:build',
     'fonts:build',
     'image:build',
-    'php:build'
+    'php:build',
+    'audio:build'
 ]);
 
 

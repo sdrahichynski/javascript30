@@ -34,11 +34,16 @@ var DrumMachine = {
 	},
 
 	playMusic: function(code) {
-		console.log(`play music ${code}`);
+		var self = this;
+		var sound = self.keys[code].querySelector('audio');
+
+		sound.currentTime = 0;
+		sound.play();
+
 	},
 
 	stopMusic: function(code) {
-		console.log(`stop music ${code}`);
+		return;
 	},
 
 	init: function(keySelector){
@@ -64,11 +69,12 @@ var Controller = {
 
 	mouseDown: function(evt){
 		evt.preventDefault();
+
 		var target = evt.target;
 
 		target = target.closest('.drumKey');
 
-		if (target) {
+		if (target.classList.contains('drumKey')) {
 			DrumMachine.pressedKey(target.getAttribute('data-key'));
 		}
 
@@ -104,8 +110,11 @@ var Controller = {
 
 		events: function(){
 
-			window.addEventListener('mousedown', Controller.mouseDown, false);
-			window.addEventListener('mouseup', Controller.mouseUp, false);
+			window.addEventListener('mouseover', Controller.mouseDown, false);
+			window.addEventListener('mouseout', Controller.mouseUp, false);
+
+			window.addEventListener('touchstart', Controller.mouseDown, false);
+			window.addEventListener('touchend', Controller.mouseUp, false);
 
 			window.addEventListener('keydown', Controller.keyDown, false);
 			window.addEventListener('keyup', Controller.keyUp, false);
@@ -122,7 +131,6 @@ var Controller = {
 
 			this.events();
 			this.main();
-
 
 		}
 
