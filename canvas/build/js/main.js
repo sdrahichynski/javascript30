@@ -7,7 +7,7 @@ ctx.strokeStyle = '#bada55';
 ctx.lineWidth = 15;
 // ctx.lineJoin = 'square';
 ctx.lineCap = 'round';
-
+ctx.globalCompositeOperation = 'soft-light'
 
 let isDrawing = false;
 let lastX = 0;
@@ -26,7 +26,9 @@ function draw(e){
 	[lastX, lastY] = [e.offsetX, e.offsetY];
 
 	hue++;
-
+	if (hue >= 360) {
+		hue = 0;
+	};
 	if (ctx.lineWidth <= 10 || ctx.lineWidth >= 50) {
 		direction = !direction;
 	};
