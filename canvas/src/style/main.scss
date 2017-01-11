@@ -1,0 +1,17 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-family: 'PT Sans', sans-serif;
+}
+
+body {
+	display: flex;
+}
+
+#canvas {
+	// border: 1px solid red;
+	flex: 1 1 auto;
+
+}
