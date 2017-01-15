@@ -1,0 +1,106 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+	// height: 100%;
+	font-family: 'PT Sans', sans-serif;
+}
+
+body {
+	background-color: #f4cd47;
+}
+
+.player {
+	width: 600px;
+	margin: 100px auto;
+	position: relative;
+	font-size: 0;
+	background-color: #000;
+	overflow: hidden;
+	box-shadow: 5px 5px 5px rgba(0,0,0,.5);
+
+	.viewer {
+		width: 100%;
+		height: auto;
+		cursor: pointer;
+	}
+
+	&__controls {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		// transform: translateY(90%);
+		transition: transform .2s;
+		background-color: rgba(0,0,0,.3);
+
+		& > * {
+			flex: 1 0 auto;
+			height: 30px;
+		}
+	}
+
+	&:hover {
+		.player__controls {
+			transform: translateY(0);
+		}
+	}
+
+	&__button {
+		background-color: transparent;
+		color: #fff;
+		border: none;
+		flex: 0 0 auto;
+		padding:  0 15px;
+		opacity: .6;
+		cursor: pointer;
+		transition: transform .1s;
+		&:hover {
+			opacity: 1;
+		}
+		&:focus {
+			outline: none;
+		}
+		&:active {
+			transform: scale(.9);
+		}
+	}
+
+	.toggle {
+		cursor: pointer;
+		width: 3em;
+		text-align: center;
+	}
+
+	&__slide {
+		margin: 0 10px;
+	}
+
+	&__progress {
+		width: 100%;
+		height: 10px;
+		background-color: rgba(255,255,255,.2);
+		cursor: pointer;
+
+		.progress-rate {
+			position: relative;
+			width: 0;
+			height: 100%;
+			background-color: rgba(255,165,0,.8);
+
+			&:after {
+				content: '';
+				display: block;
+				position: absolute;
+				right: 0;
+				height: 100%;
+				width: 1px;
+				background-color: rgba(255,255,255,.2);
+				box-shadow: 0 0 1px 1px rgba(255,165,0,.5);
+				z-index: 100;
+			}
+		}
+	}
+
+}
