@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Custom video player</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+	<!--  Let's -->
+
+	<div class="player">
+
+		<video class="player__video viewer" src="https://player.vimeo.com/external/194837908.sd.mp4?s=c350076905b78c67f74d7ee39fdb4fef01d12420&profile_id=164"></video>
+
+		<div class="player__controls">
+
+			<div class="player__progress">
+				<div class="progress-rate"></div>
+			</div>
+
+			<button class="player__button toggle">►</button>
+
+			<input type="range" class="player__slide" name="volume" min="0" max="1" value="1" step=".01">
+			<input type="range" class="player__slide" name="playbackRate" min=".5" max="2.5" step=".5" value="1">
+
+			<button class="player__button skip" data-skip="-15"><< -5</button>
+			<button class="player__button skip" data-skip="15">+5 >></button>
+
+		</div>
+
+	</div>
+
+
+	<script src="js/main.js"></script>
+</body>
+</html>
