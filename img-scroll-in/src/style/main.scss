@@ -1,0 +1,55 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'PT Sans', sans-serif;
+}
+
+body {
+	background-color: #f4cd47;
+	padding: 1px;
+}
+
+
+.container {
+	width: 800px;
+	margin: 10px auto;
+	background-color: #fff;
+	padding: 20px 50px;
+	font-size: 16px;
+
+	p {
+
+
+		img {
+			float: left;
+			border-radius: 5px;
+			margin: 0 20px 10px 0;
+
+			&.right {
+				float: right;
+				margin: 0 0 10px 20px;
+			}
+		}
+
+	}
+}
+
+
+.slide-in {
+	opacity: 0;
+	transform: translateX(-30%) scale(.92);
+
+	transform-origin: 0 0;
+	&.right {
+		transform: translateX(30%) scale(.92);
+		transform-origin: 100% 0;
+	}
+
+
+	&.active {
+		opacity: 1;
+		transform: none;
+		transition: opacity .5s, transform .5s;
+	}
+}
